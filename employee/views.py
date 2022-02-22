@@ -21,7 +21,3 @@ class EmployeeViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
     filter_class = EmployeeFilterSet
     search_fields = ('first_name', 'last_name')
-
-    @method_decorator(cache_page(60*60*1))
-    def list(self, request, *args, **kwargs):
-        return super().list(request, *args, **kwargs)
