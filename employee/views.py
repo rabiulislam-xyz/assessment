@@ -16,7 +16,7 @@ class PositionViewSet(viewsets.ModelViewSet):
 
 
 class EmployeeViewSet(viewsets.ModelViewSet):
-    queryset = Employee.objects.all().select_related('position')
+    queryset = Employee.objects.all().order_by('position').select_related('position')
     serializer_class = EmployeeSerializer
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
     filter_class = EmployeeFilterSet

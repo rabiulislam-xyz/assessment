@@ -25,5 +25,8 @@ class EmployeeFilterSet(filterset.FilterSet):
             except Position.DoesNotExist:
                 logger.error('Position with id {} does not exist'.format(value))
                 queryset = queryset.none()
+            except Exception as e:
+                logger.error('Error while filtering employees: {}'.format(e))
+                queryset = queryset.none()
 
         return queryset
