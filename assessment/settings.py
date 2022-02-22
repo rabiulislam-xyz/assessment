@@ -31,7 +31,7 @@ SECRET_KEY = env.str('SECRET_KEY', 'django-insecure-*au%7wkx$ze&!u2f0&-wy+^4!+q*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DEBUG', False)
 
-ALLOWED_HOSTS = ["*"]  # TODO specify allowed hosts
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default="*")
 
 AUTH_USER_MODEL = 'account.User'
 
@@ -89,11 +89,14 @@ WSGI_APPLICATION = 'assessment.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.sqlite3"),
+        "NAME": os.environ.get("SQL_DATABASE", BASE_DIR / "db.sqlite3"),
+        "USER": os.environ.get("SQL_USER", "user"),
+        "PASSWORD": os.environ.get("SQL_PASSWORD", "password"),
+        "HOST": os.environ.get("SQL_HOST", "localhost"),
+        "PORT": os.environ.get("SQL_PORT", "5432"),
     }
 }
 
