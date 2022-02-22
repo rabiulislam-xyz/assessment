@@ -6,10 +6,12 @@ coreschema==0.0.4
 Deprecated==1.2.13
 Django==4.0.2
 django-cors-headers==3.11.0
+django-debug-toolbar==3.2.4
 django-environ==0.8.1
 django-filter==21.1
 django-js-asset==2.0.0
 django-mptt==0.13.4
+django-redis==5.2.0
 djangorestframework==3.13.1
 djangorestframework-simplejwt==5.0.0
 idna==3.3

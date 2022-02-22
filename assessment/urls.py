@@ -13,6 +13,8 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.documentation import include_docs_urls
@@ -21,10 +23,12 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from assessment.views import home
 
+
 api_v1_urls = [
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('account/', include('account.urls')),
+    path('', include('employee.urls')),
 ]
 
 urlpatterns = [
@@ -35,3 +39,13 @@ urlpatterns = [
                                            permission_classes=[AllowAny]), name='api-docs-url'),
     path('', home),
 ]
+
+if settings.DEBUG:  # pragma: no cover
+    urlpatterns += static(
+        settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(
+        settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+    urlpatterns = [
+        path('__debug__/', include('debug_toolbar.urls')),
+    ] + urlpatterns
