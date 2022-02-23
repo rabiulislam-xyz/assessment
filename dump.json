@@ -1,0 +1,162 @@
+[
+  {
+    "model": "account.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$320000$vV5VNu0CkOSVJ7qws7aRsO$IoJ1/QZ/V2ha2H/Px7PfQlsexd76NP6qzxO1mzv0vLo=",
+      "last_login": "2022-02-23T06:45:05Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2022-02-23T06:44:52Z",
+      "email": "admin@email.com",
+      "phone": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 1,
+    "fields": {
+      "title": "CTO",
+      "parent": null,
+      "created_at": "2022-02-23T06:45:15.903Z",
+      "updated_at": "2022-02-23T06:45:15.903Z",
+      "lft": 1,
+      "rght": 6,
+      "tree_id": 1,
+      "level": 0
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 2,
+    "fields": {
+      "title": "Senior Software Engineer",
+      "parent": 1,
+      "created_at": "2022-02-23T06:45:29.047Z",
+      "updated_at": "2022-02-23T06:45:29.047Z",
+      "lft": 2,
+      "rght": 5,
+      "tree_id": 1,
+      "level": 1
+    }
+  },
+  {
+    "model": "employee.position",
+    "pk": 3,
+    "fields": {
+      "title": "Software Engineer",
+      "parent": 2,
+      "created_at": "2022-02-23T06:45:39.423Z",
+      "updated_at": "2022-02-23T06:45:39.423Z",
+      "lft": 3,
+      "rght": 4,
+      "tree_id": 1,
+      "level": 2
+    }
+  },
+  {
+    "model": "employee.employee",
+    "pk": 1,
+    "fields": {
+      "first_name": "Alexandra",
+      "last_name": "Amy",
+      "position": 1,
+      "created_at": "2022-02-23T06:46:20.077Z",
+      "updated_at": "2022-02-23T06:46:20.077Z"
+    }
+  },
+  {
+    "model": "employee.employee",
+    "pk": 2,
+    "fields": {
+      "first_name": "Angela",
+      "last_name": "Anna",
+      "position": 2,
+      "created_at": "2022-02-23T06:46:35.013Z",
+      "updated_at": "2022-02-23T06:46:35.013Z"
+    }
+  },
+  {
+    "model": "employee.employee",
+    "pk": 3,
+    "fields": {
+      "first_name": "Carol",
+      "last_name": "Emily",
+      "position": 2,
+      "created_at": "2022-02-23T06:47:02.655Z",
+      "updated_at": "2022-02-23T06:47:02.655Z"
+    }
+  },
+  {
+    "model": "employee.employee",
+    "pk": 4,
+    "fields": {
+      "first_name": "Robert",
+      "last_name": "Williams",
+      "position": 2,
+      "created_at": "2022-02-23T06:47:53.894Z",
+      "updated_at": "2022-02-23T06:47:53.894Z"
+    }
+  },
+  {
+    "model": "employee.employee",
+    "pk": 5,
+    "fields": {
+      "first_name": "Michael",
+      "last_name": "Bell",
+      "position": 3,
+      "created_at": "2022-02-23T06:48:15.284Z",
+      "updated_at": "2022-02-23T06:48:15.284Z"
+    }
+  },
+  {
+    "model": "employee.employee",
+    "pk": 6,
+    "fields": {
+      "first_name": "Robert",
+      "last_name": "Valdivia",
+      "position": 3,
+      "created_at": "2022-02-23T06:48:29.582Z",
+      "updated_at": "2022-02-23T06:48:29.582Z"
+    }
+  },
+  {
+    "model": "employee.employee",
+    "pk": 7,
+    "fields": {
+      "first_name": "Valerie J.",
+      "last_name": "Morris",
+      "position": 3,
+      "created_at": "2022-02-23T06:48:41.055Z",
+      "updated_at": "2022-02-23T06:48:41.055Z"
+    }
+  },
+  {
+    "model": "employee.employee",
+    "pk": 8,
+    "fields": {
+      "first_name": "Andre",
+      "last_name": "Westfall",
+      "position": 3,
+      "created_at": "2022-02-23T06:48:52.125Z",
+      "updated_at": "2022-02-23T06:48:52.125Z"
+    }
+  },
+  {
+    "model": "employee.employee",
+    "pk": 9,
+    "fields": {
+      "first_name": "Joseph",
+      "last_name": "Keo",
+      "position": 3,
+      "created_at": "2022-02-23T06:49:15.485Z",
+      "updated_at": "2022-02-23T06:49:15.485Z"
+    }
+  }
+]
